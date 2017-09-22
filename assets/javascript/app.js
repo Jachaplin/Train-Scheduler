@@ -40,10 +40,10 @@ $(document).ready(function() {
 
 	  // Logs everything to console
 	  
-		console.log(addTrain.name)
-	  console.log(addTrain.destination)
-	  console.log(addTrain.start)
-	  console.log(addTrain.rate)
+		// console.log(addTrain.name)
+	  // console.log(addTrain.destination)
+	  // console.log(addTrain.start)
+	  // console.log(addTrain.rate)
 
 	  // Alert
 	  
@@ -62,7 +62,7 @@ $(document).ready(function() {
 
 	database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
-	  console.log(childSnapshot.val())
+	  // console.log(childSnapshot.val())
 
 	  // Store everything into a variable.
 	  
@@ -73,14 +73,14 @@ $(document).ready(function() {
 
 	  // train Info
 	  
-		console.log(trainName)
-	  console.log(trainDest)
-	  console.log(firstTrainTime)
-	  console.log(tFrequency)
+		// console.log(trainName)
+	  // console.log(trainDest)
+	  // console.log(firstTrainTime)
+	  // console.log(tFrequency)
 
 	  // Prettify the train start
 	  
-		var firstTrainTimePretty = moment(firstTrainTime, "hh:mm").subtract(1, "years")
+		var firstTrainTimePretty = moment(firstTrainTime, "HH:mm").subtract(1, "years")
 
 		var currentTime = moment()
 
@@ -89,12 +89,12 @@ $(document).ready(function() {
 		var tRemainder = diffTime % tFrequency
 
 		var tMinutesTillTrain = tFrequency - tRemainder
-		    console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain)
+		    // console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain)
 	    // Next Train
 	  var nextTrain = moment().add(tMinutesTillTrain, "minutes")
-	    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"))
+	    // console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"))
 
-	  var nextTrainPretty = moment(nextTrain).format("hh:mm")
+	  var nextTrainPretty = moment(nextTrain).format("HH:mm")
 
 	  // Add each train's data into the table
 		$("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDest + "</td><td>" +
