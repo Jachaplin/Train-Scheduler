@@ -1,6 +1,6 @@
 $(document).ready(function() {	
 
-// Initialize Firebase
+  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCQ7y8_gXx5FRmrqEbbYqYXhNCRW4R_h8g",
     authDomain: "train-scheduler-6a241.firebaseapp.com",
@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 	  // Uploads train data to the database
 	  
-	database.ref().push(addTrain)
+	  database.ref().push(addTrain)
 
 	  // Logs everything to console
 	  
@@ -47,11 +47,11 @@ $(document).ready(function() {
 
 	  // Alert
 	  
-	// alert("Train successfully added");
+	  // alert("Train successfully added");
 
 	  // Clears all of the text-boxes
 	  
-		$("#train-name-input").val("")
+	  $("#train-name-input").val("")
 	  $("#destination-input").val("")
 	  $("#time-input").val("")
 	  $("#frequency-input").val("")
@@ -66,7 +66,7 @@ $(document).ready(function() {
 
 	  // Store everything into a variable.
 	  
-		var trainName = childSnapshot.val().name
+	  var trainName = childSnapshot.val().name
 	  var trainDest = childSnapshot.val().destination
 	  var firstTrainTime = childSnapshot.val().start
 	  var tFrequency = childSnapshot.val().rate
@@ -89,10 +89,10 @@ $(document).ready(function() {
 		var tRemainder = diffTime % tFrequency
 
 		var tMinutesTillTrain = tFrequency - tRemainder
-		    // console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain)
-	    // Next Train
+		// console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain)
+	  // Next Train
 	  var nextTrain = moment().add(tMinutesTillTrain, "minutes")
-	    // console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"))
+	  // console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"))
 
 	  var nextTrainPretty = moment(nextTrain).format("HH:mm")
 

@@ -1,0 +1,27 @@
+body {
+	margin: 10px auto;
+	background-image: url("http://enesense.com/wp-content/uploads/2016/03/mission-background-optimized.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-bottom: 150px;
+}
+
+#jumbotron-header {
+	background-image:
+	/*Darkening the header image*/ 
+	linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+	url("https://design.style4.info/wp-content/uploads/2011/08/moz-screenshot.png");
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+    text-shadow: 0 2.5px 0 black;
+
+}
+
+.jumbotron {
+	border: 1px solid black;
+}
