@@ -1,3 +1,4 @@
+// Nice job putting everything in a document.ready block 👌
 $(document).ready(function() {	
 
   // Initialize Firebase
@@ -26,7 +27,10 @@ $(document).ready(function() {
 	  var tFrequency = $("#frequency-input").val().trim()
 
 	  // Creates local "temporary" object for holding train data
-	  
+
+	  // Not necessary for the scope of this assignment, but it'd be a good idea to validate 
+	  // all of this user input before saving it to your firebase database.
+
 		var addTrain = {
 		    name: trainName,
 		    destination: trainDest,
@@ -97,6 +101,17 @@ $(document).ready(function() {
 	  var nextTrainPretty = moment(nextTrain).format("HH:mm")
 
 	  // Add each train's data into the table
+	  // This is a pretty unweildy combination of html string snippets and JS variables. It would probably
+	  // be easier to make sense of it if you broke it up into smaller pieces. For instance:
+
+	  // var row = $("<tr>")
+	  // row.append( $("<td>").text(trainName) )
+	  // row.append( $("<td>").text(trainDest) )
+	  // row.append( $("<td>").text(tFrequency) )
+	  // row.append( $("<td>").text(nextTrainPretty) )
+	  // row.apend( $("<td>").text(tMinutesTillTrain) )
+	  // $("#train-table > tbody").append( row )
+
 		$("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDest + "</td><td>" +
 	  tFrequency + "</td><td>" + nextTrainPretty + "</td><td>" + tMinutesTillTrain + "</td><td>")
 	})
